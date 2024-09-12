@@ -1,0 +1,4 @@
+hadoop fs -mkdir /user/ex2
+hadoop fs -put -f C:\DALAB\weather\weather.csv /user/ex2
+hadoop jar C:\hadoop\share\hadoop\tools\lib\hadoop-streaming-3.3.6.jar -input /user/ex2/weather.csv -output /user/ex2/output -mapper "python C:\DALAB\weather\mapper.py" -reducer "python C:\DALAB\weather\reducer.py"
+hadoop fs -cat /user/ex2/output/part-00000

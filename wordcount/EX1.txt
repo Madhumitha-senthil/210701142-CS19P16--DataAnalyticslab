@@ -1,0 +1,6 @@
+hadoop fs -mkdir /user
+hadoop fs -mkdir /user/ex1
+hadoop fs -put -f C:\DALAB\wordcount\input.txt /user/ex1
+hadoop jar C:\hadoop\share\hadoop\tools\lib\hadoop-streaming-3.3.6.jar -input /user/ex1/input.txt -output /user/ex1/output -mapper "python C:\DALAB\wordcount\mapper.py" -reducer "python C:\DALAB\wordcount\reducer.py"
+hadoop fs -cat /user/ex1/output/part-00000
+
