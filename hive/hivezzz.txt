@@ -1,0 +1,22 @@
+StartNetworkServer -h 0.0.0.0
+
+hive --service schematool -dbType derby -initSchema
+
+Creating database:
+create
+database company;
+
+
+Check if database is created :
+Show databases; 
+
+Create table employee:
+create table employee(name varchar(10), age int, empId int, designation
+varchar(10)); 
+
+Insert values in the table employee :
+insert into employee values("Amar",45,1,"DataAnalyst");
+insert into employee values("Divya",25,3,"Marketing");
+insert into employee values("Karthik",27,7,"Developer"); 
+
+select * from employee where age=25 OR age=27;
